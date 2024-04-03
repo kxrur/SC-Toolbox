@@ -1,11 +1,17 @@
 <template>
   <div id="app">
     <h1>SCSD Vue.js UI Components Library</h1>
-    
+
     <div class="my-5">
-      <button class="round-blue-button" @click="goTo('UIButtons')">Go to Buttons</button>
-      <button class="round-blue-button" @click="goTo('UIGraphs')">Go to Graphs</button>
-      <button class="round-blue-button" @click="goTo('UIMenubars')">Go to Menubars</button>
+      <button class="round-blue-button" @click="goTo('UIButtons')">
+        Go to Buttons
+      </button>
+      <button class="round-blue-button" @click="goTo('UIGraphs')">
+        Go to Graphs
+      </button>
+      <button class="round-blue-button" @click="goTo('UIMenubars')">
+        Go to Menubars
+      </button>
     </div>
 
     <component :is="currentComponent"></component>
@@ -13,32 +19,32 @@
 </template>
 
 <script>
-import UIButtons from './components/UIButtons.vue'
-import UIGraphs from './components/UIGraphs.vue'
-import UIMenubars from './components/UIMenubars.vue'
+import UIButtons from "./components/UIButtons.vue";
+import UIGraphs from "./components/UIGraphs.vue";
+import UIMenubars from "./components/UIMenubars.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     UIButtons,
     UIGraphs,
-    UIMenubars
+    UIMenubars,
   },
   data() {
     return {
-      currentComponent: ''
-    }
+      currentComponent: "",
+    };
   },
   methods: {
     goTo(component) {
       if (component === this.currentComponent) {
-        this.currentComponent = '';
+        this.currentComponent = "";
       } else {
         this.currentComponent = component;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
@@ -59,5 +65,4 @@ export default {
 .round-blue-button:hover {
   @apply bg-white text-blue-700;
 }
-
 </style>
